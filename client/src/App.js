@@ -37,13 +37,19 @@ function App() {
     const newTodoItems = todoItems.concat(newItem);
     setTodoItems(newTodoItems);
   };
+
+  // todoItems 상태에 특정 투두를 삭제하는 일
+  const deleteItem = (delItem) => {
+    const newTodoItems = todoItems.filter((item) => item.id !== delItem.id);
+    setTodoItems(newTodoItems);
+  };
   return (
     <div className="App">
       <AddTodo addItem={addItem} />
       {/* todoItems 반복, props 데이터(투두 객체)를 자식 컴포넌트에게 전달 */}
       {todoItems.map((item) => {
         //map을 사용할때에는 key속성을 추가하기
-        return <Todo key={item.id} item={item} />;
+        return <Todo key={item.id} item={item} deleteItem={deleteItem} />;
       })}
     </div>
   );
