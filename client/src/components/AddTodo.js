@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import styles from '../styles/AddTodo.scss';
 
 export default function AddTodo({ addItem }) {
   const [todoItem, setTodoItem] = useState({
@@ -30,7 +34,18 @@ export default function AddTodo({ addItem }) {
         onKeyDown={handleKeyDown}
         onChange={(e) => setTodoItem({ title: e.target.value })}
       />
-      <button onClick={onButtonClick}>ADD</button>
+      {/* <InputGroup className="mb-3">
+        <InputGroup.Text id="inputGroup-sizing-default">
+          Default
+        </InputGroup.Text>
+        <Form.Control
+          aria-label="Default"
+          aria-describedby="inputGroup-sizing-default"
+        />
+      </InputGroup> */}
+      <Button variant="primary" onClick={onButtonClick}>
+        ADD
+      </Button>{' '}
     </div>
   );
 }

@@ -1,0 +1,15 @@
+@import '~bootstrap/scss/bootstrap';
+
+.AddTodo {
+  display: flex;
+}
+
+input {
+  width: 100%;
+  height: auto;
+  padding: 12px 8px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid lightskyblue;
+  margin-right: 12px;
+}

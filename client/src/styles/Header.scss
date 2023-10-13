@@ -1,0 +1,14 @@
+.header {
+  background-color: lightskyblue;
+  color: white;
+
+  font-family: 'YourStylishFont', sans-serif; // 멋진 글꼴로 교체
+  font-size: 24px; // 글꼴 크기 조절
+  font-weight: bold; // 글꼴 굵기 조절
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); // 그림자 스타일 조정
+
+  display: flex;
+  justify-content: center;
+
+  width: 500px;
+}

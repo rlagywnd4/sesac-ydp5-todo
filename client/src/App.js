@@ -2,6 +2,8 @@ import AddTodo from './components/AddTodo';
 import Todo from './components/Todo';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import styles from './styles/App.scss';
+import Header from './components/Header';
 
 function App() {
   // console.log(process.env.REACT_APP_DB_HOST); // process.env넣기(react)
@@ -55,8 +57,9 @@ function App() {
 
   return (
     <div className="App">
-      <div>todo count : {itemCount}</div>
+      <Header />
       <AddTodo addItem={addItem} />
+      <div>todo count : {itemCount}</div>
       {/* todoItems 반복, props 데이터(투두 객체)를 자식 컴포넌트에게 전달 */}
       {todoItems.map((item) => {
         //map을 사용할때에는 key속성을 추가하기
