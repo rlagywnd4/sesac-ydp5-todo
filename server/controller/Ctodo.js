@@ -4,6 +4,7 @@ const { Op } = require('sequelize');
 // GET /api/todos - show all todos (READ)
 exports.readTodos = async (_, res) => {
   try {
+    // let todos = await Todo.findAll({ order: ['id', 'DESC'] });
     let todos = await Todo.findAll();
     res.send(todos);
   } catch (err) {
@@ -20,8 +21,8 @@ exports.createTodo = async (req, res) => {
       done: false,
     });
     console.log(newTodo);
-    // res.send(newTodo);
-    res.end();
+    res.send(newTodo);
+    // res.end(); //end는 데이터 없이 응답을 하는 것
   } catch (err) {
     res.send(err);
   }
@@ -54,6 +55,7 @@ exports.updateTodo = async (req, res) => {
   }
 };
 
+// DELETE /api/todo/:todoId - edit a specific todo (UPDATE)
 exports.deleteTodo = async (req, res) => {
   try {
     let isDeleted = await Todo.destroy({
